@@ -15,13 +15,16 @@ form .button {
 
 section h3 {
   text-align: center;
+  color: #ffd700;
 }
 
 section p {
   word-wrap: break-word;
+  color: #ffd700;
 }
 
 .close-button {
   cursor: pointer;
   text-align: end;
+  color: #ffd700;
 }

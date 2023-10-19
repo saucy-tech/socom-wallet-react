@@ -95,14 +95,12 @@ const PaymentsModal = ({ modalState, setModalState }) => {
       isOpen={modalState.open}
       style={customStyles}
       contentLabel="Example Modal"
-      appElement={document.getElementById("root")}
-    >
+      appElement={document.getElementById("root")}>
       <p
         className="close-button"
         onClick={() => {
           clearForms();
-        }}
-      >
+        }}>
         X
       </p>
       {/* If it is a send */}

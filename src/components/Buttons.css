@@ -1,5 +1,6 @@
 label {
   padding-bottom: 2%;
+  color: #ffd700;
 }
 
 .buttons {
@@ -11,17 +12,19 @@ label {
 }
 
 .button {
-  background-color: #ffbf46;
-  border: 2px solid #8a4fff;
+  background-color: #003366;
+  border: 2px solid #ffd700;
   border-radius: 5px;
   padding: 5px;
   font-size: 1.2rem;
   font-family: monospace;
   font-weight: bold;
   width: 100px;
+  color: #ffd700;
 }
 
 .buttons button:hover {
   cursor: pointer;
-  opacity: 0.6;
+  background: #ffd700;
+  color: #003366;
 }

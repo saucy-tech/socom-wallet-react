@@ -1,73 +1,94 @@
 body {
-  background-color: #192734;
-  font-family: monospace;
+  background: linear-gradient(to bottom, #000033 0%, #000066 50%, #003366 100%);
+  font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console",
+    "Lucida Sans Typewriter", Monaco, "Courier New", "Nimbus Mono L", monospace;
+  color: #ffd700;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 header {
-  border-bottom: 2px solid #ffbf46;
+  border-bottom: 2px solid #ffd700;
+  text-align: center;
+  padding: 10px;
+}
+
+#logo {
+  display: block;
+  max-width: 100px;
+  height: auto;
+  margin: 0 auto;
 }
 
 h1 {
   text-align: center;
-  color: #8a4fff;
+  color: #ffd700;
+  font-size: 24px;
 }
 
 img {
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 footer {
-  border-top: 2px solid #ffbf46;
-  padding: 1%;
+  border-top: 2px solid #ffd700;
+  padding: 3%;
   text-align: center;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  z-index: 1;
 }
 
 footer p {
-  color: #8a4fff;
+  color: #ffd700;
 }
 
 .balance-card {
-  background-color: #ffbf46;
-  border: 2px solid #8a4fff;
+  background-color: #003366;
+  border: 2px solid #ffd700;
   padding: 1%;
   width: 25%;
-  margin-top: 3%;
-  margin-bottom: 1%;
+  margin: 3% 2%;
   border-radius: 5px;
 }
 
 .balance-card p {
   font-size: 1.2rem;
   font-weight: bold;
+  text-align: center;
+  color: #ffd700;
 }
 
 .row {
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
+  margin-bottom: 2%;
 }
 
 .row-item {
-  background-color: ghostwhite;
-  border: 2px solid #8a4fff;
+  background-color: #003366;
+  border: 2px solid #ffd700;
   border-radius: 5px;
   height: 300px;
-  width: 40%;
-  overflow: scroll;
+  width: calc(50% - 2%);
+  overflow: auto;
 }
 
-.row-item h3 {
-  padding-left: 2%;
-}
-
+.row-item h3,
 .row-item p {
-  padding-left: 2%;
+  padding: 0 2%;
+  color: #ffd700;
 }
 
 .transaction .transaction-amount {
@@ -75,7 +96,7 @@ footer p {
 }
 
 .transaction-amount {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #ffd700;
 }
 
 @media (max-width: 876px) {
@@ -86,9 +107,7 @@ footer p {
 
   .balance-card {
     width: 100%;
-    text-align: center;
-    margin-right: 2%;
-    margin-left: 2%;
+    margin: 2% 0;
   }
 }
 
@@ -98,12 +117,12 @@ footer p {
   }
 
   .row-item {
-    margin-top: 1%;
+    margin: 1% 0;
+    width: 80%;
   }
 
   .balance-card {
     width: 80%;
-    margin: 0 auto;
-    margin-top: 1%;
+    margin: 1% auto;
   }
 }

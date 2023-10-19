@@ -107,6 +107,11 @@ function App() {
   return (
     <div className="App">
       <header>
+        <img
+          src={process.env.PUBLIC_URL + "/socom-wallet-logo.png"}
+          id="logo"
+          alt="SOCOM Wallet Logo"
+        />
         <h1>socom wallet</h1>
       </header>
       <Buttons />
