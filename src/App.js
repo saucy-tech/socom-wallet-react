@@ -44,7 +44,6 @@ function App() {
   };
 
   const getTransactions = () => {
-    // ToDo: Lookup how to move the X-API-Key to a .env file to keep it secret for when we push to Github
     const headers = {
       "X-Api-Key": apiKey,
     };
@@ -130,7 +129,7 @@ function App() {
         </div>
       </div>
       <footer>
-        <p>made for socomers. by socomers.</p>
+        <p>made for socomers. by a socomer.</p>
       </footer>
     </div>
   );
