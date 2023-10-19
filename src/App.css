@@ -52,6 +52,12 @@ footer p {
   color: #ffd700;
 }
 
+footer a {
+  color: #ffa500;
+  text-decoration: none;
+  font-weight: bold;
+}
+
 .balance-card {
   background-color: #003366;
   border: 2px solid #ffd700;

@@ -135,6 +135,23 @@ function App() {
       </div>
       <footer>
         <p>made for socomers. by a socomer.</p>
+        <p>
+          Made with 🧡 by{" "}
+          <a
+            href="https://saucy.tech"
+            target="_blank"
+            rel="noopener noreferrer">
+            saucy.tech
+          </a>{" "}
+          | Thanks to{" "}
+          <a
+            href="https://www.pleblab.com/"
+            target="_blank"
+            rel="noopener noreferrer">
+            pleblab.com
+          </a>{" "}
+          for tutorial and source code
+        </p>
       </footer>
     </div>
   );
