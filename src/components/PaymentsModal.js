@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
 import axios from "axios";
+import QRCode from "qrcode.react";
 import "./PaymentsModal.css";
 
 const customStyles = {
@@ -20,6 +21,7 @@ const PaymentsModal = ({ modalState, setModalState }) => {
     amount: 0,
     invoiceToPay: "",
   });
+
   // Our state for storing the invoice we created to be paid
   const [invoice, setInvoice] = useState("");
   // Our state for the invoice we paid
@@ -62,7 +64,6 @@ const PaymentsModal = ({ modalState, setModalState }) => {
     const data = {
       amount: formData.amount,
       out: false,
-      // ToDo: Add additional form for user to be able to customize the memo
       memo: "LNBits",
     };
     axios
@@ -95,12 +96,14 @@ const PaymentsModal = ({ modalState, setModalState }) => {
       isOpen={modalState.open}
       style={customStyles}
       contentLabel="Example Modal"
-      appElement={document.getElementById("root")}>
+      appElement={document.getElementById("root")}
+    >
       <p
         className="close-button"
         onClick={() => {
           clearForms();
-        }}>
+        }}
+      >
         X
       </p>
       {/* If it is a send */}
@@ -122,7 +125,7 @@ const PaymentsModal = ({ modalState, setModalState }) => {
       {/* If it is a receive */}
       {modalState.type === "receive" && (
         <form>
-          <label>enter amount</label>
+          <label>Enter amount</label>
           <input
             type="number"
             min="0"
@@ -131,17 +134,24 @@ const PaymentsModal = ({ modalState, setModalState }) => {
               setFormData({ ...formData, amount: e.target.value })
             }
           />
+          <label>Customize memo</label>
+          <input
+            type="text"
+            value={formData.memo}
+            onChange={(e) => setFormData({ ...formData, memo: e.target.value })}
+          />
           <button className="button" onClick={(e) => handleReceive(e)}>
             Submit
           </button>
         </form>
       )}
+
       {/* If we are displaying our newly created invoice */}
       {invoice && (
         <section>
           <h3>Invoice created</h3>
           <p>{invoice}</p>
-          {/* ToDo: Create a QR code out of this invoice as well */}
+          <QRCode value={invoice} size={128} />
         </section>
       )}
       {/* If we are displaying the status of our successful payment */}

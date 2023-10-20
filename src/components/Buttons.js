@@ -2,24 +2,35 @@ import React, { useState } from "react";
 import PaymentsModal from "./PaymentsModal";
 import "./Buttons.css";
 
-export const Buttons = () => {
+export default function Buttons() {
   const [modalState, setModalState] = useState({
     type: "",
     open: false,
   });
+
+  const handleButtonClick = (soundFile) => {
+    const audio = new Audio(soundFile);
+    audio.play();
+  };
 
   return (
     <div>
       <div className="buttons">
         <button
           className="button"
-          onClick={() => setModalState({ type: "send", open: "true" })}
+          onClick={() => {
+            handleButtonClick("/send.mp3");
+            setModalState({ type: "send", open: "true" });
+          }}
         >
           Send
         </button>
         <button
           className="button"
-          onClick={() => setModalState({ type: "receive", open: "true" })}
+          onClick={() => {
+            handleButtonClick("/receive.mp3");
+            setModalState({ type: "receive", open: "true" });
+          }}
         >
           Receive
         </button>
@@ -27,6 +38,4 @@ export const Buttons = () => {
       <PaymentsModal modalState={modalState} setModalState={setModalState} />
     </div>
   );
-};
-
-export default Buttons;
+}
